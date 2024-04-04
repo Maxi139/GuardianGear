@@ -1,0 +1,167 @@
+:root{
+    --first: #FFEDD8;
+    --second: #EABE6C;
+    --third: #891652;
+    --fourth: #240A34;
+}
+
+*{
+    font-family: 'EB Garamond', sans-serif;
+
+        background: var(--first);
+}
+
+.body{
+
+
+    height: 100vh;
+    width: 100vh;
+}
+
+.header{
+    background-color: transparent;
+    border-bottom: #fff9f1 4px solid;
+
+    height: 104px;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header p{
+    color: var(--fourth);
+
+    height: 104px;
+    width: 106px;
+
+    text-align: center;
+    line-height: 104px;
+
+    font-size: 24px;
+    margin: -65px;
+}
+
+.header p:hover{
+    animation-name: getBigger;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+
+@keyframes getBigger{
+    0%{border-bottom: var(--fourth) 0px solid;}
+    10%{border-bottom: var(--fourth) 1px solid;}
+    50%{border-bottom: var(--fourth) 2px solid;}
+    100%{border-bottom: var(--fourth) 4px solid;}
+}
+
+.header .logo{
+    width: 100px;
+    height: 78.54px;
+
+    margin-top: 2px;
+    
+}
+
+.header .header_Imgs{
+    width: 73px;
+    height: 73px;
+
+    background-color: var(--second);
+    border-radius: 30px;
+    
+}
+
+.header #search{
+    position: absolute;
+    right: 160px;
+
+    transform: scaleX(0);
+
+    border: var(--second) 4px solid;
+    background: var(--first);
+    outline: none;
+    border-radius: 0px 30px 30px 0px;
+
+    height: 63px;
+    width: 400px;
+
+    z-index: -1;
+
+    color: #240A34;
+    font-size: 24px;
+    text-align: center;
+
+}
+
+@keyframes slideOpen{
+    0%{transform: scaleY(0); visibility: hidden;}
+    0.1%{visibility: visible;}
+    100%{transform: scaleY(1);}
+}
+
+#searchIcon:hover + #search{
+    animation-name: slideOpen;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    
+}
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: none;
+    
+}
+
+
+
+.main img{
+    z-index: 1;
+    
+    background: none;
+
+    animation-name: wobble;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.main h1{
+    position: absolute;
+    font-size: 400px;
+
+    left: 200px;
+
+    animation-name: wobble;
+    animation-duration: 0.8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.main h2{
+    position: absolute;
+    font-size: 400px;
+
+    right: 40px;
+
+    animation-name: wobble;
+    animation-duration: 0.7s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+
+}
+
+@keyframes wobble{
+    0%{transform: translateY(0px);}
+    25%{transform: translateY(5px);}
+    75%{transform: translateY(-5px);}
+    100%{transform: translateY(0px);}
+}
+
+
